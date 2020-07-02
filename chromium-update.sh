@@ -23,7 +23,6 @@ echo "Fetching $ZIP_URL"
 
 rm -rf $REVISION
 mkdir $REVISION
-#pushd $REVISION
 curl -# $ZIP_URL > $ZIP_FILE
 echo -n "Unzipping..."
 unzip -o $ZIP_FILE | awk 'BEGIN {ORS=""} {print "."}'
@@ -33,5 +32,4 @@ if [ -d /Applications/Chromium.app ] ; then
 	rm -rf /Applications/Chromium.app
 fi
 mv -v chrome-mac/Chromium.app /Applications/
-#popd
 exit
